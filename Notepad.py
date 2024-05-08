@@ -1,0 +1,12 @@
+from tkinter import *
+root = Tk()
+root.geometry("320x240")
+root.title("Riju04Th's Notepad")
+root.minsize(240,320)
+root.maxsize(780,1280)
+scrollbar = Scrollbar(root)
+scrollbar.pack(side=RIGHT, fill=Y)
+text_info = Text(root, yscrollcommand=scrollbar.set)
+text_info.pack(fill=BOTH)
+scrollbar.config(command=text_info.yview)
+root.mainloop()
