@@ -1,5 +1,5 @@
 import pyttsx3
-import speech_recognition as sr
+# import speech_recognition as sr
 import datetime
 import os
 import wikipedia
@@ -56,13 +56,13 @@ if __name__ == "__main__":
             print("Sir, the date is", strDate)
             speak("Sir, the date is {strDate}")
             break
-        # elif query == "wiki":
-        #     print("Searching Wikipedia...")
-        #     speak("Searching Wikipedia...")
-        #     query = query.replace("wikipedia", "")
-        #     results = wikipedia.summary(query, sentences=2)
-        #     print("According to Wikipedia")
-        #     speak("According to Wikipedia")
-        #     print(results)
-        #     speak(results)
-        #     break
+        elif query == "wiki":
+            print("Searching Wikipedia...")
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            print("According to Wikipedia")
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
+            break
