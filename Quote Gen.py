@@ -28,5 +28,7 @@ def generate_quote():
     ]
     return random.choice(quotes)
 if __name__ == "__main__":
+    engine.say("Here's your quote:")
     print("Here's your quote:")
     print(generate_quote())
+    engine.runAndWait(generate_quote())
