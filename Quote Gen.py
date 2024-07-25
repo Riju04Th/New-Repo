@@ -1,8 +1,11 @@
 import pyttsx3
 engine = pyttsx3.init('sapi5')
 # engine.getProperty('voices')
-engine.setProperty('voices', value=[1])
+engine.setProperty('voices', value=[2])
 import random
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
 def generate_quote():
     quotes = [
         "The best way to predict the future is to create it.",
@@ -28,8 +31,8 @@ def generate_quote():
     ]
     return random.choice(quotes)
 if __name__ == "__main__":
-    engine.say("Here's your quote:")
     print("Here's your quote:")
-    print(generate_quote())
-    f=print(generate_quote())
-    engine.runAndWait(f)
+    speak("Here's your quote:")
+    sp = generate_quote()
+    print(sp)
+    speak(sp)
