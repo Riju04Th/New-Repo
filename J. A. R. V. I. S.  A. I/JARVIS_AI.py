@@ -49,12 +49,12 @@ if __name__ == "__main__":
         if query == "time":
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             print("Sir, the time is", strTime)
-            speak("Sir, the time is {strTime}")
+            speak(f"Sir, the time is {strTime}")
             break
         elif query == "date":
             strDate = datetime.datetime.now().strftime("%d/%m/%Y")
             print("Sir, the date is", strDate)
-            speak("Sir, the date is {strDate}")
+            speak(f"Sir, the date is {strDate}")
             break
         # elif query == "wiki":
         #     print("Searching Wikipedia...")
