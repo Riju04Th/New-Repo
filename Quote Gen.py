@@ -1,7 +1,7 @@
 import pyttsx3
 engine = pyttsx3.init('sapi5')
 # engine.getProperty('voices')
-engine.setProperty(voices=[1])
+engine.setProperty('voices', value=[1])
 import random
 def generate_quote():
     quotes = [
@@ -31,4 +31,5 @@ if __name__ == "__main__":
     engine.say("Here's your quote:")
     print("Here's your quote:")
     print(generate_quote())
-    engine.runAndWait(generate_quote())
+    f=print(generate_quote())
+    engine.runAndWait(f)
