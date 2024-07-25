@@ -1,3 +1,7 @@
+import pyttsx3
+engine = pyttsx3.init('sapi5')
+# engine.getProperty('voices')
+engine.setProperty('voices[1]')
 import random
 def generate_quote():
     quotes = [
