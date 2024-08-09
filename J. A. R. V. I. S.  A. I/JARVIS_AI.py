@@ -1,6 +1,7 @@
 import pyttsx3
 import speech_recognition as sr
 import datetime
+import pyjokes
 # import os
 # import wikipedia
 # import pyaudio
