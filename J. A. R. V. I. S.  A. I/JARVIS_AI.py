@@ -2,12 +2,11 @@ import pyttsx3
 import speech_recognition as sr
 import datetime
 import pyjokes
-# import os
+import os
 # import wikipedia
-# import pyaudio
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voices', voices[0].id)
+engine.setProperty('voice', voices[0].id)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -45,19 +44,23 @@ def takeCommand():
     return query
 if __name__ == "__main__":
     Greetings()
+    # TC = takeCommand()
+    # query = TC.lower()
     query = input("enter command: ")
     while True:
-        if query == "time":
+        if "time" in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             print("Sir, the time is", strTime)
             speak(f"Sir, the time is {strTime}")
             break
-        elif query == "date":
+
+        elif "date" in query:
             strDate = datetime.datetime.now().strftime("%d/%m/%Y")
             print("Sir, the date is", strDate)
             speak(f"Sir, the date is {strDate}")
             break
-        # elif query == "wiki":
+
+        # elif "wiki" in query:
         #     print("Searching Wikipedia...")
         #     speak("Searching Wikipedia...")
         #     query = query.replace("wikipedia", "")
@@ -67,3 +70,21 @@ if __name__ == "__main__":
         #     print(results)
         #     speak(results)
         #     break
+
+        elif "tell me a joke" in query:
+            joke = pyjokes.get_joke(language="en", category="all")
+            print(joke)
+            speak(joke)
+            break
+
+        elif "play songs" in query:
+            songs_dir = ""
+            songs = os.listdir(songs_dir)
+            print("This songs available in the directory:")
+            speak("This songs available in the directory:")
+            os.startfile(os.path.join(songs_dir,songs[0]))
+
+        elif "exit" in query:
+            print("Sir, I am closing the sessions. Goodbye!")
+            speak("Sir, I am closing the sessions. Goodbye!")
+            break
