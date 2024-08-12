@@ -20,6 +20,7 @@ count.sum()
 count.sum()
 count.sum()
 count.sum()
+count.sum()
 print(count._Solution__privateCounter)
 
 # use the private class function
